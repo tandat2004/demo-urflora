@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng | URFLORA</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Logo Urflora">
+            </a>
+            
+            <!-- Điều hướng trung tâm -->
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Trang chủ</a>
+                <a href="shop.html" class="nav-link">Sản phẩm</a>
+            </nav>
+            
+            <!-- Action Icon -->
+            <div class="header-actions">
+                <a href="cart.html" class="cart-icon-wrapper" aria-label="Giỏ hàng">
+                    <span class="material-icons">shopping_cart</span>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+                <a href="auth.html" id="auth-link" class="cart-icon-wrapper" aria-label="Tài khoản">
+                    <span class="material-icons">person_outline</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="cart-title">Giỏ Hàng Niềm Vui</h1>
+            
+            <div class="cart-layout">
+                <!-- Danh sách sản phẩm -->
+                <div id="cart-items">
+                    <!-- DOM JS sẽ fill vào đây -->
+                </div>
+
+                <!-- Tóm Tắt Đơn Hàng -->
+                <div>
+                    <div class="summary-card">
+                        <h2>
+                            <span class="material-icons">receipt_long</span> Tóm tắt đơn hàng
+                        </h2>
+                        
+                        <div class="summary-row">
+                            <span class="summary-label">Tạm Tính</span>
+                            <span class="summary-value" id="cart-total">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Vận Chuyển</span>
+                            <span class="summary-value shipping-status">Xác định sau</span>
+                        </div>
+                        
+                        <hr class="summary-divider">
+                        
+                        <div class="summary-row summary-total">
+                            <span>Tổng Tộng</span>
+                            <span class="total-price" id="checkout-total">Lấy theo Tạm Tính</span>
+                        </div>
+
+                        <button class="btn btn-primary btn-checkout" onclick="alert('Module thanh toán chưa tích hợp - Yêu Cầu Của Môn Học!')" aria-label="Tiến hành thanh toán">
+                            Tiến Hành Thanh Toán <span class="material-icons">arrow_forward</span>
+                        </button>
+                        <p class="payment-security">
+                            <span class="material-icons">lock</span> Thanh toán an toàn, vui tươi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-flex">
+                <!-- Branding -->
+                <div>
+                    <a href="index.html" class="footer-logo">URFLORA</a>
+                    <p class="footer-tagline">Lựa chọn trải nghiệm hoa tươi tắn rực rỡ cho mọi khoảnh khắc. Nổi bật, vui nhộn và tràn đầy sinh lực.</p>
+                </div>
+                <!-- Links Khám Phá -->
+                <div>
+                    <h4 class="footer-heading">Khám Phá</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Về Chúng Tôi</a></li>
+                        <li><a href="#">Hướng Dẫn Chăm Sóc</a></li>
+                        <li><a href="#">Vận Chuyển</a></li>
+                        <li><a href="#">Chính Sách Bảo Mật</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <p class="footer-copyright">© 2026 Urflora. Xinh tươi như hoa.</p>
+        </div>
+    </footer>
+
+    <!-- JS sẽ tự động tính toán Render cho "cart-items" -->
+    <script src="script.js"></script>
+    <script>
+        // Update Checkout button automatically to track total
+        setInterval(() => {
+            const t = document.getElementById('cart-total');
+            const mt = document.getElementById('checkout-total');
+            if (t && mt) mt.innerText = t.innerText;
+        }, 500);
+    </script>
+</body>
+</html>

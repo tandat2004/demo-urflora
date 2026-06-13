@@ -1,0 +1,105 @@
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    margin-right: 1.5rem;
+}
+
+.cart-item-info { flex-grow: 1; }
+.cart-remove { color: var(--text-muted); font-size: 1.5rem; margin-left: 1rem; }
+.cart-remove:hover { color: var(--danger); transform: scale(1.1); }
+
+.summary-card {
+    background-color: rgba(255, 214, 238, 0.4); /* Nền mix mờ Kẹo ngọt */
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--primary-bg);
+    height: fit-content;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.cart-title {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.summary-card h2 .material-icons {
+    color: var(--primary);
+}
+
+.shipping-status {
+    color: var(--tertiary);
+}
+
+.payment-security .material-icons {
+    font-size: 1rem;
+}
+
+.summary-label {
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
+.summary-value {
+    font-weight: bold;
+}
+
+.summary-divider {
+    border: none;
+    border-top: 1px solid var(--primary-bg);
+    margin: 1rem 0;
+}
+
+.summary-total {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.summary-total .total-price {
+    color: var(--primary);
+}
+
+.btn-checkout {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.payment-security {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--secondary);
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}

@@ -1,0 +1,31 @@
+:root {
+    /* Palette: Premium Candy - Màu sắc bão hòa vừa phải để tránh cảm giác "AI Slop" */
+    --primary: #e040a0;       
+    --primary-bg: #fff0f9;    
+    --secondary: #7c52aa;     
+    --tertiary: #0096cc;      
+    
+    --bg-color: #fcfaff;      
+    --surface-color: #ffffff; 
+    
+    --text-dark: #1a1518;     /* Đậm hơn, gần Off-Black */
+    --text-muted: #6b5c6b;    
+    --border-color: #f0e6f0;  
+    
+    --font-main: 'Montserrat', sans-serif;
+    
+    /* Radius: Exaggerated Squircle for high-end feel */
+    --radius-sm: 12px;
+    --radius-md: 24px;
+    --radius-lg: 32px;
+    --radius-pill: 9999px;    
+    
+    /* Shadows: Diffused & Tinted - Cực kỳ mềm mại */
+    --shadow-sm: 0 4px 20px rgba(46, 26, 40, 0.04);
+    --shadow-md: 0 12px 40px rgba(46, 26, 40, 0.08);
+    --shadow-hover: 0 20px 60px rgba(224, 64, 160, 0.12);
+    
+    /* Motion: Agency-tier fluid dynamics */
+    --transition: all 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+    --transition-fast: all 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}

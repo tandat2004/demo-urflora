@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác Thực | URFLORA</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="auth-body">
+    
+    <!-- Auth Không Cần Header Truyền Thống, Trực Diện Center -->
+    <div class="container">
+        
+        <div class="auth-logo-section">
+            <a href="index.html" class="auth-logo">
+                <span class="material-icons">local_florist</span>
+                URFLORA
+            </a>
+            <p class="auth-tagline">Niềm Vui Thủ Công.</p>
+        </div>
+
+        <div class="auth-wrapper">
+            <!-- Auth Tab Switcher -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="tab-login" onclick="toggleAuth('login')" aria-label="Chuyển sang đăng nhập">Đăng Nhập</button>
+                <button class="auth-tab" id="tab-register" onclick="toggleAuth('register')" aria-label="Chuyển sang đăng ký">Đăng Ký</button>
+            </div>
+
+            <!-- Khối Đăng Nhập -->
+            <form id="login-form">
+                <div class="form-group">
+                    <label class="form-label">Địa Chỉ Email</label>
+                    <input type="email" class="form-input" placeholder="xinchao@example.com" required aria-label="Địa chỉ email">
+                </div>
+                
+                <div class="form-group">
+                    <div class="password-label-row">
+                        <label class="form-label">Mật Khẩu</label>
+                        <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                    </div>
+                    <input type="password" class="form-input" placeholder="••••••••" required aria-label="Mật khẩu">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-auth" aria-label="Đăng nhập">Chào Mừng Trở Lại</button>
+            </form>
+
+            <!-- Khối Đăng Ký (Ẩn Mặc Định Bằng JS) -->
+            <form id="register-form" style="display: none;" onsubmit="alert('Vì là Demo Sinh viên nên ấn vào Đăng Nhập để thiết lập Flag localStorge!'); return false;">
+                <div class="form-group">
+                    <label class="form-label">Họ Và Tên</label>
+                    <input type="text" class="form-input" placeholder="Khách Hàng Vui Mừng" required aria-label="Họ và tên">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Địa Chỉ Email</label>
+                    <input type="email" class="form-input" placeholder="xinchao@example.com" required aria-label="Địa chỉ email">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Mật Khẩu Bổ Sung</label>
+                    <input type="password" class="form-input" placeholder="Tạo một mật khẩu an toàn..." required aria-label="Mật khẩu">
+                </div>
+                
+                <button type="submit" class="btn btn-secondary btn-auth btn-register" aria-label="Đăng ký">Tham Gia Khu Vườn</button>
+            </form>
+
+            <p class="auth-footer-text">
+                Khi tiếp tục, đồng nghĩa bạn đồng ý với <a href="#">Điều Khoản Dịch Vụ</a> và <a href="#">Bảo Mật Quyền Riêng Tư</a> của Môn Dạy.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Script Toggling Auth -->
+    <script>
+        function toggleAuth(type) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const btnLog = document.getElementById('tab-login');
+            const btnReg = document.getElementById('tab-register');
+            
+            if (type === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                btnLog.classList.add('active');
+                btnReg.classList.remove('active');
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                btnLog.classList.remove('active');
+                btnReg.classList.add('active');
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
