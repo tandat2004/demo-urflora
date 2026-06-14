@@ -301,3 +301,22 @@
 .badge-bestseller {
     color: var(--primary);
 }
+
+/* Footer-related styles (from index.html inline styles) */
+.footer-info-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-section-title {
+    margin-bottom: 1rem;
+}
+
+.footer-list-item {
+    margin-bottom: 0.5rem;
+}
+
+.footer-item-link {
+    color: var(--text-muted);
+}
