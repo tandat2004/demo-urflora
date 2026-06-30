@@ -1,0 +1,12 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.main-content {
+    flex-grow: 1; /* Đẩy footer xuống dưới cùng */
+    padding: 3rem 0;
+}
+

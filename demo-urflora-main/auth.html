@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URFLORA</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="logo-art">
+        URFL<span>🌸</span>RA
+    </div>
+    <nav>
+        <a href="index.html">Trang chủ</a>
+        <a href="shop.html">Sản phẩm</a>
+        <a href="#">Về chúng tôi</a>
+    </nav>
+    </header>
+
+    <main class="container">
+        <div class="logo">
+            <h1>URFLORA</h1>
+            <p>YOUR DAILY DOSE OF DELIGHT</p>
+        </div>
+
+        <div class="form-box">
+            <div class="tabs">
+                <button class="active" onclick="showLogin()">Sign In</button>
+                <button onclick="showRegister()">Sign Up</button>
+            </div>
+
+            <div id="login-form">
+                <label>Email Address</label>
+                <input type="email" placeholder="hello@example.com">
+                <label>Password</label>
+                <input type="password" placeholder="********">
+                <a href="#" class="forgot">Quên mật khẩu ?</a>
+                <button class="submit-btn">Welcome Back</button>
+            </div>
+
+            <div id="register-form" style="display:none;">
+                <label>Full Name</label>
+                <input type="text" placeholder="Nguyen Van A">
+                <label>Email Address</label>
+                <input type="email" placeholder="hello@example.com">
+                <label>Password</label>
+                <input type="password" placeholder="********">
+                <label>Confirm Password</label>
+                <input type="password" placeholder="********">
+                <button class="submit-btn">Create Account</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 URFLORA. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showLogin(){
+            document.getElementById("login-form").style.display="block";
+            document.getElementById("register-form").style.display="none";
+            document.querySelectorAll(".tabs button")[0].classList.add("active");
+            document.querySelectorAll(".tabs button")[1].classList.remove("active");
+        }
+        function showRegister(){
+            document.getElementById("login-form").style.display="none";
+            document.getElementById("register-form").style.display="block";
+            document.querySelectorAll(".tabs button")[1].classList.add("active");
+            document.querySelectorAll(".tabs button")[0].classList.remove("active");
+        }
+    </script>
+</body>
+</html>

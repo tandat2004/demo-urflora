@@ -1,0 +1,190 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f8f1f7;
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh;      
+}
+
+.container {
+    flex: 1;                
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 5%;
+}
+
+.logo {
+    text-align: center; 
+    margin-bottom: 40px;
+}
+
+.logo h1 {
+    color: #e843a3;
+    font-size: 60px;
+    display: flex;        
+    justify-content: center; 
+    align-items: center;
+    gap: 10px;    
+    font-family: 'Georgia', serif;    
+    letter-spacing: 3px;
+}
+
+.logo h1 span {
+    font-size: 50px; 
+    vertical-align: middle; 
+    display: inline-block;
+    margin: 0 -8px; 
+}
+
+.logo p {
+    color: #666;
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+.form-box{
+    width:550px;
+    background:white;
+    padding:40px;
+    border-radius:35px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.tabs{
+    display:flex;
+    background:#f3e8f7;
+    border-radius:50px;
+    padding:5px;
+    margin-bottom:30px;
+}
+
+.tabs button{
+    flex:1;
+    border:none;
+    background:none;
+    padding:15px;
+    font-size:22px;
+    cursor:pointer;
+    border-radius:50px;
+}
+
+.tabs .active{
+    background:white;
+    color:#e843a3;
+    font-weight:bold;
+}
+
+label{
+    display:block;
+    text-align:left;
+    margin-top:20px;
+    margin-bottom:10px;
+    color:#555;
+    font-size:18px;
+}
+
+input{
+    width:100%;
+    padding:18px;
+    border:2px solid #eddcf0;
+    border-radius:25px;
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#e843a3;
+}
+
+.forgot{
+    display:block;
+    text-align:right;
+    margin-top:5px;
+    color:#00a8ff;
+    text-decoration:none;
+}
+
+.submit-btn{
+    width:100%;
+    margin-top:30px;
+    border:none;
+    background:#e843a3;
+    color:white;
+    padding:18px;
+    border-radius:50px;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+    background:#d63396;
+    transform:translateY(-2px);
+}
+
+.logo-art {
+    margin-left: 0;
+    font-family: 'Georgia', serif; 
+    font-weight: 800;
+    font-size: 32px;
+    color: #e843a3;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.logo-art span {
+    font-size: 28px;
+    margin: 0 -4px; 
+    transform: rotate(10deg); 
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+
+.logo-art:hover span {
+    transform: rotate(180deg) scale(1.2);
+}
+
+
+.navbar {
+    padding: 20px 5%;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f8f1f7;
+}
+
+.navbar .logo-nav {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e843a3;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 30px;
+    font-weight: 500;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    background: #f8f1f7;
+    font-size: 16px;
+}
+

@@ -1,0 +1,308 @@
+/* ==========================================================================
+   SHOP.CSS — Style riêng cho trang Sản phẩm (shop.html)
+   Chỉ thêm style mới, KHÔNG đụng tới main.css / header.css / footer.css
+   Dùng lại biến màu sẵn có: --primary, --secondary, --tertiary, --text-muted, --transition
+   ========================================================================== */
+
+/* ---------- TIÊU ĐỀ TRANG ---------- */
+.shop-hero {
+    text-align: center;
+    padding: 3rem 0 2.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.shop-title {
+    font-size: 3rem;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    color: var(--text-dark, #2d2333);
+}
+
+.shop-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* ---------- BỘ LỌC (PILLS) ---------- */
+.filter-pills {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.pill {
+    border: none;
+    background: #ffffffaa;
+    color: var(--text-dark, #2d2333);
+    padding: 0.7rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pill:hover {
+    background: #ffffff;
+}
+
+.pill.active {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* ---------- LƯỚI SẢN PHẨM DẠNG BENTO ---------- */
+.shop-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1.2fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.shop-card {
+    background: #fff;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.shop-card .badge {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    z-index: 2;
+}
+
+.shop-card .badge-artificial {
+    background: #fff;
+    color: var(--tertiary);
+    right: 1.25rem;
+    left: auto;
+}
+
+/* Card lớn bên trái: ảnh + nội dung nằm ngang */
+.shop-card-feature {
+    flex-direction: row;
+}
+
+.shop-card-feature .shop-card-img {
+    flex: 1 1 50%;
+}
+
+.shop-card-feature .shop-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.shop-card-feature .shop-card-body {
+    flex: 1 1 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Card giữa: ảnh trên, nội dung dưới, cao bằng card lớn */
+.shop-card-tall {
+    flex-direction: column;
+}
+
+.shop-card-tall .shop-card-img {
+    height: 55%;
+}
+
+.shop-card-tall .shop-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.shop-card-tall .shop-card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Tiêu đề / mô tả chung cho card lớn + card giữa */
+.shop-card-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark, #2d2333);
+}
+
+.shop-card-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.shop-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.shop-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.shop-price-artificial {
+    color: var(--tertiary);
+}
+
+.shop-add-btn {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.shop-add-btn:hover {
+    transform: scale(1.08);
+}
+
+.shop-add-btn-artificial {
+    background: var(--tertiary);
+}
+
+/* Cột phải: 2 card nhỏ xếp chồng */
+.shop-side-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.shop-card-small {
+    background: #fff;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.shop-card-small .shop-card-img {
+    height: 130px;
+}
+
+.shop-card-small .shop-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.shop-card-small-body {
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.shop-card-title-small {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-dark, #2d2333);
+}
+
+.shop-price-small {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.shop-add-btn-small {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: none;
+    background: #f1eef5;
+    color: var(--text-dark, #2d2333);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.shop-add-btn-small:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* ---------- NÚT "XEM THÊM" ---------- */
+.shop-more-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0 4rem;
+}
+
+.btn-more {
+    background: #fff;
+    border: 1px solid #e4dfe9;
+    color: var(--text-dark, #2d2333);
+    font-weight: 600;
+    padding: 0.9rem 1.75rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-more:hover {
+    background: #f7f5fa;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+    .shop-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .shop-side-stack {
+        grid-column: 1 / -1;
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-title {
+        font-size: 2.1rem;
+    }
+    .shop-grid {
+        grid-template-columns: 1fr;
+    }
+    .shop-card-feature {
+        flex-direction: column;
+    }
+    .shop-side-stack {
+        flex-direction: column;
+    }
+}

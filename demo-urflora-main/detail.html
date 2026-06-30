@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URFLORA | Xinh tươi như hoa</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">      
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Logo Urflora">
+            </a>
+            
+            <nav class="nav">
+                <a href="/index.html" class="nav-link active">Trang chủ</a>
+                <a href="/shop.html" class="nav-link">Sản phẩm</a>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="/cart.html" class="cart-icon-wrapper">
+                    <span class="material-icons">shopping_cart</span>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+                <a href="/auth.html" id="auth-link" class="cart-icon-wrapper">
+                    <span class="material-icons">person_outline</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+<main class="small-container">
+    <div class="breadcrumbs">
+        <a href="#">Home ></a> <i class="fa-solid fa-chevron-right"></i> 
+        <a href="#">Bouquets ></a> <i class="fa-solid fa-chevron-right"></i> 
+        <span>Cẩm Tú Cầu</span>
+    </div>
+
+    <div class="row single-product">
+        
+        <div class="col-2 product-gallery">
+            <div class="main-img-wrapper">
+                <span class="badge-best-seller">Best Seller</span>
+                <img src="images/camtucau1.jpg" id="ProductImg" alt="The Sunrise Symphony">
+            </div>
+            
+            <div class="small-img-row">
+                <div class="small-img-col active">
+                    <img src="images/camtucau1.jpg" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/camtucau2.jpg" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/camtucau3.jpg" class="small-img">
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-2 product-info-details">
+            <div class="fresh-tag">
+                <span class="material-icons">local_florist</span>
+                <i class="fa-solid fa-seedling"></i> Nổi Bật
+            </div>
+            
+            <h1>Cẩm Tú Cầu</h1>
+            
+            <div class="price-rating-row">
+                <span class="product-price" id="ProductPrice">125.000 VND</span>
+                <span class="rating-badge">
+                    <i class="fa-solid fa-star"></i> 4.9 <span class="review-count">(100 đánh giá)</span>
+                </span>
+            </div>
+            
+            <p class="product-description">
+                Cẩm Tú Cầu vừa là biểu tượng cho lòng biết ơn chân thành, những cảm xúc nghẹn ngào được gửi gắm từ tận đáy lòng, vừa đại diện cho sự thịnh vượng, giàu có và tình cảm đong đầy.
+            </p>
+            
+            <div class="product-options-wrapper">
+                <div class="option-section-title">Size</div>
+                <div class="size-group">
+                    <div class="size-option">
+                        <input type="radio" id="size-standard" name="product-size" value="standard" data-extra="0">
+                        <label for="size-standard">Tiêu chuẩn</label>
+                    </div>
+                    <div class="size-option">
+                        <input type="radio" id="size-deluxe" name="product-size" value="deluxe" data-extra="40000" checked>
+                        <label for="size-deluxe">Cao cấp (+40.000 VND)</label>
+                    </div>
+                </div>
+                
+                <div class="quantity-row">
+                    <div class="option-section-title">Số lượng</div>
+                    <div class="quantity-controller">
+                        <button type="button" class="quantity-btn" id="btn-decrease">—</button>
+                        <span class="quantity-number" id="quantity-val">1</span>
+                        <button type="button" class="quantity-btn" id="btn-increase">+</button>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="btn btn-primary full-width-btn">
+                <i class="fa-solid fa-bag-shopping"></i> Thêm vào giỏ hàng
+            </a>
+            
+            <div class="features-badge-row">
+                <div class="feature-badge delivery">
+                    <div class="badge-icon"><span class="material-icons">local_shipping</span></div>
+                    <span>Giao trong ngày</span>
+                </div>
+                <div class="feature-badge freshness">
+                    <div class="badge-icon"><span class="material-icons">favorite</span></div>
+                    <span>Hoa tươi</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var ProductImg = document.getElementById("ProductImg");
+        var SmallImg = document.getElementsByClassName("small-img");
+
+        for (let i = 0; i < SmallImg.length; i++) {
+            SmallImg[i].onclick = function() {
+                ProductImg.src = SmallImg[i].src;
+                for (let j = 0; j < SmallImg.length; j++) {
+                    SmallImg[j].parentElement.classList.remove("active");
+                }
+                this.parentElement.classList.add("active");
+            }
+        }
+
+        const BASE_PRICE = 85000; 
+        
+        var priceElement = document.getElementById("ProductPrice");
+        var quantityVal = document.getElementById("quantity-val");
+        var btnDecrease = document.getElementById("btn-decrease");
+        var btnIncrease = document.getElementById("btn-increase");
+        var sizeRadios = document.querySelectorAll('input[name="product-size"]');
+
+        var currentQty = 1;
+
+        function formatMoney(amount) {
+            return amount.toLocaleString('vi-VN') + " VND";
+        }
+
+        function updatePrice() {
+            var extraPrice = 0;
+            sizeRadios.forEach(function(radio) {
+                if (radio.checked) {
+                    extraPrice = parseInt(radio.getAttribute("data-extra"));
+                }
+            });
+
+            var totalPrice = (BASE_PRICE + extraPrice) * currentQty;
+            priceElement.textContent = formatMoney(totalPrice);
+        }
+
+        sizeRadios.forEach(function(radio) {
+            radio.addEventListener("change", updatePrice);
+        });
+
+        btnIncrease.onclick = function() {
+            currentQty++;
+            quantityVal.textContent = currentQty;
+            updatePrice();
+        };
+
+        btnDecrease.onclick = function() {
+            if (currentQty > 1) {
+                currentQty--;
+                quantityVal.textContent = currentQty;
+                updatePrice();
+            }
+        };
+
+        updatePrice();
+    </script>
+</main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-flex">
+                <div>
+                    <a href="#" class="footer-logo">URFLORA</a>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Lựa chọn trải nghiệm hoa tươi tắn rực rỡ cho mọi khoảnh khắc. Nổi bật, vui nhộn và tràn đầy sinh lực.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Khám Phá</h4>
+                    <ul>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted);">Về Chúng Tôi</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted);">Hướng Dẫn Chăm Sóc</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted);">Vận Chuyển</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted);">Chính Sách Bảo Mật</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-copyright">© 2026 Urflora. Xinh tươi như hoa.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

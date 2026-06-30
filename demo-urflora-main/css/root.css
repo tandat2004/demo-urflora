@@ -1,0 +1,25 @@
+:root {
+    --primary: #e040a0;       /* Hồng rực - Hành động chính */
+    --primary-bg: #ffd6ee;    /* Nền hồng nhạt */
+    --secondary: #7c52aa;     /* Tím - Nhấn mạnh phụ */
+    --tertiary: #0096cc;      /* Xanh dương - Thông tin/Liên kết */
+    
+    --bg-color: #fef7ff;      /* Trắng hồng nhạt - Màu nền chung */
+    --surface-color: #ffffff; /* Trắng tinh - Màu nền của thẻ (cards) */
+    
+    --text-dark: #2e1a28;     /* Đen hơi nhạt - Chữ chính */
+    --text-muted: #604868;    /* Xám - Chữ phụ/mô tả */
+    --border-color: #f2e8f2;  /* Viền xám nhạt */
+    
+    --font-main: 'Montserrat', sans-serif;
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-pill: 9999px;    /* Hình viên thuốc (Nút bấm, nhãn) */
+    
+    /* Đổ bóng có pha màu theo chủ đề Kẹo Ngọt */
+    --shadow-sm: 0 4px 16px rgba(224, 64, 160, 0.08); /* Bóng hồng nhẹ */
+    --shadow-hover: 0 12px 32px rgba(224, 64, 160, 0.18); /* Bóng hồng sâu khi di chuột */
+    
+    --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Hoạt ảnh nảy (Bouncy) */
+}

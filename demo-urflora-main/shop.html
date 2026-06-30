@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URFLORA | Sản phẩm</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/shop.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<!-- (HEADER) -->
+<header class="header">
+    <div class="container header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <img src="images/logo.svg" alt="Logo Urflora">
+        </a>
+
+        <!-- Điều hướng trung tâm -->
+        <nav class="nav">
+            <a href="/index.html" class="nav-link">Trang chủ</a>
+            <a href="/shop.html" class="nav-link active">Sản phẩm</a>
+        </nav>
+
+        <!-- Action Icon -->
+        <div class="header-actions">
+            <a href="/cart.html" class="cart-icon-wrapper">
+                <span class="material-icons">shopping_cart</span>
+                <span class="cart-badge" id="cart-count">0</span>
+            </a>
+            <a href="/auth.html" id="auth-link" class="cart-icon-wrapper">
+                <span class="material-icons">person_outline</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="main-content">
+    <div class="container">
+
+        <!-- TIÊU ĐỀ TRANG -->
+        <section class="shop-hero">
+            <h1 class="shop-title">Hoa <span style="color: var(--primary);">Tươi Vui</span> Cho Mỗi Ngày</h1>
+            <p class="shop-subtitle">Khám phá bộ sưu tập hoa tươi tuyển chọn đầy năng lượng và hoa lụa vĩnh cửu rực rỡ. Được thiết kế để mang một chút niềm vui đến không gian của bạn.</p>
+
+            <!-- BỘ LỌC -->
+            <div class="filter-pills">
+                <button class="pill active">Tất Cả Phép Màu</button>
+                <button class="pill">Hoa Tươi</button>
+                <button class="pill">Hoa Lụa Vĩnh Cửu</button>
+            </div>
+        </section>
+
+        <!-- LƯỚI SẢN PHẨM DẠNG BENTO -->
+        <section class="shop-grid">
+
+            <!-- SP LỚN: Pink Peony Explosion -->
+            <div class="card shop-card shop-card-feature">
+                <span class="badge">Bán Chạy Nhất</span>
+                <div class="shop-card-img">
+                    <img src="images/maudonhong.jpg" alt="Bùng Nổ Mẫu Đơn Hồng">
+                </div>
+                <div class="shop-card-body">
+                    <div>
+                        <h3 class="shop-card-title">Bùng Nổ<br>Mẫu Đơn Hồng</h3>
+                        <p class="shop-card-desc">Tươi mới, bồng bềnh và rực rỡ không hối tiếc. Bó hoa này là niềm vui thuần khiết, cô đặc.</p>
+                    </div>
+                    <div class="shop-card-footer">
+                        <span class="card-price shop-price">85.000 VND</span>
+                        <button class="add-btn shop-add-btn" onclick="addToCart(1)"><span class="material-icons">add</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SP GIỮA: Velvet Midnight Orchids -->
+            <div class="card shop-card shop-card-tall">
+                <span class="badge badge-artificial">Hoa lụa</span>
+                <div class="shop-card-img">
+                    <img src="images/lanhodiep.png" alt="Lan Hồ Điệp Nhung Tím">
+                </div>
+                <div class="shop-card-body">
+                    <h3 class="shop-card-title">Lan Hồ Điệp<br>Nhung Tím</h3>
+                    <p class="shop-card-desc">Vẻ thanh lịch vĩnh cửu với sắc tím rực rỡ không bao giờ phai.</p>
+                    <div class="shop-card-footer">
+                        <span class="card-price shop-price shop-price-artificial">120.000 VND</span>
+                        <button class="add-btn shop-add-btn shop-add-btn-artificial" onclick="addToCart(2)"><span class="material-icons">add</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI: 2 SP nhỏ -->
+            <div class="shop-side-stack">
+                <div class="card shop-card-small">
+                    <div class="shop-card-img">
+                        <img src="images/mayhong.png" alt="Hỗn Hợp Mây Hồng">
+                    </div>
+                    <div class="shop-card-small-body">
+                        <div>
+                            <h3 class="shop-card-title-small">Hỗn Hợp<br>Mây Hồng</h3>
+                            <span class="card-price shop-price-small">55.000 VND</span>
+                        </div>
+                        <button class="add-btn shop-add-btn-small" onclick="addToCart(3)"><span class="material-icons">add</span></button>
+                    </div>
+                </div>
+
+                <div class="card shop-card-small">
+                    <div class="shop-card-img">
+                        <img src="images/giot-nang.png" alt="Giọt Nắng">
+                    </div>
+                    <div class="shop-card-small-body">
+                        <div>
+                            <h3 class="shop-card-title-small">Giọt Nắng</h3>
+                            <span class="card-price shop-price-small">42.000 VND</span>
+                        </div>
+                        <button class="add-btn shop-add-btn-small" onclick="addToCart(4)"><span class="material-icons">add</span></button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- NÚT XEM THÊM -->
+        <div class="shop-more-wrapper">
+            <button class="btn-more">
+                Khám Phá Thêm Phép Màu <span class="material-icons">expand_more</span>
+            </button>
+        </div>
+
+    </div>
+</main>
+
+<!-- CHÂN TRANG (FOOTER) -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-flex">
+            <!-- Branding -->
+            <div>
+                <a href="#" class="footer-logo">URFLORA</a>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Lựa chọn trải nghiệm hoa tươi tắn rực rỡ cho mọi khoảnh khắc. Nổi bật, vui nhộn và tràn đầy sinh lực.</p>
+            </div>
+
+            <!-- Links Khám Phá -->
+            <div>
+                <h4 style="margin-bottom: 1rem;">Khám Phá</h4>
+                <ul>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted);">Về Chúng Tôi</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted);">Hướng Dẫn Chăm Sóc</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted);">Vận Chuyển</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted);">Chính Sách Bảo Mật</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2026 Urflora. Xinh tươi như hoa.</p>
+    </div>
+</footer>
+
+<!-- (JS) -->
+<script src="script.js"></script>
+</body>
+</html>

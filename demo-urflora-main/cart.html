@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/flora_icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cart.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Giỏ hàng của bạn</title>
+  </head>
+  <body>
+    <img class="background" src="images/nhieuhoa.svg" />
+    <!-- (HEADER) -->
+    <header class="header">
+      <div class="container header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <img src="images/logo.svg" alt="Logo Urflora" />
+        </a>
+        <p class="cart_page">Giỏ hàng của bạn</p>
+        <!-- Điều hướng trung tâm -->
+        <nav class="nav">
+          <a
+            href="index.html"
+            class="nav-link active"
+            title="Trang chủ"
+            style="font-size: 1.15rem"
+          >
+            Trang chủ</a
+          >
+          <a href="auth.html" id="auth-link" class="cart-icon-wrapper"
+            ><span class="material-icons" title="Người dùng"
+              >person_outline</span
+            ></a
+          >
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <h1 class="title_cart">Thông tin giỏ hàng</h1>
+
+      <div class="cart-container">
+        <div class="cart-items-list">
+          <p id="alert" class="alert" style="display: none">
+            Không tìm thấy sản phẩm nào trong giỏ hàng
+          </p>
+
+          <div class="product-card" data-price="45000">
+            <div class="product-img-wrapper">
+              <img
+                src="images/maudonhong.jpg"
+                alt="Lời hứa màu hồng"
+                class="product-image"
+              />
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">Lời hứa màu hồng</h3>
+              <p class="product-tagline">Hàng mới về</p>
+              <span class="product-price">45.000 VNĐ</span>
+            </div>
+            <div class="product-actions">
+              <div class="product_nums">
+                <button class="remove" onclick="remove(this)">
+                  <span class="material-icons">remove</span>
+                </button>
+                <p class="product_nums_text">1</p>
+                <button class="add" onclick="add(this)">
+                  <span class="material-icons">add</span>
+                </button>
+              </div>
+              <button class="delete-btn">
+                <span class="material-icons">delete_outline</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-price="65000">
+            <div class="product-img-wrapper">
+              <img
+                src="images/hoadenji.png"
+                alt="Trộn niềm vui"
+                class="product-image"
+              />
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">Trộn niềm vui</h3>
+              <p class="product-tagline">Hàng mới về</p>
+              <span class="product-price">65.000 VNĐ</span>
+            </div>
+            <div class="product-actions">
+              <div class="product_nums">
+                <button class="remove" onclick="remove(this)">
+                  <span class="material-icons">remove</span>
+                </button>
+                <p class="product_nums_text">2</p>
+                <button class="add" onclick="add(this)">
+                  <span class="material-icons">add</span>
+                </button>
+              </div>
+              <button class="delete-btn">
+                <span class="material-icons">delete_outline</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="order-summary">
+          <h2 class="summary-title">Tóm tắt đơn hàng</h2>
+
+          <div class="summary-row">
+            <span>Tạm tính</span>
+            <span id="aside-subtotal">175.000 VNĐ</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Phí vận chuyển</span>
+            <span class="shipping-note">Tính ở bước tiếp theo</span>
+          </div>
+
+          <hr class="summary-divider" />
+
+          <div class="summary-row total-row">
+            <span>Tổng cộng</span>
+            <span id="aside-total">175.000 VNĐ</span>
+          </div>
+
+          <button class="btn-checkout">
+            Tiến hành thanh toán
+            <span class="material-icons">arrow_forward</span>
+          </button>
+
+          <div class="secure-note">
+            <span class="material-icons">lock_open</span>
+            <span>Thanh toán an toàn & bảo mật</span>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-flex">
+          <div>
+            <a href="/index.html" class="footer-logo">URFLORA</a>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 0.9rem;
+                line-height: 1.6;
+              "
+            >
+              Lựa chọn trải nghiệm hoa tươi tắn rực rỡ cho mọi khoảnh khắc. Nổi
+              bật, vui nhộn và tràn đầy sinh lực.
+            </p>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 1rem">Khám Phá</h4>
+            <ul>
+              <li style="margin-bottom: 0.5rem">
+                <a href="#" style="color: var(--text-muted)">Về Chúng Tôi</a>
+              </li>
+              <li style="margin-bottom: 0.5rem">
+                <a href="#" style="color: var(--text-muted)"
+                  >Hướng Dẫn Chăm Sóc</a
+                >
+              </li>
+              <li style="margin-bottom: 0.5rem">
+                <a href="#" style="color: var(--text-muted)">Vận Chuyển</a>
+              </li>
+              <li style="margin-bottom: 0.5rem">
+                <a href="#" style="color: var(--text-muted)"
+                  >Chính Sách Bảo Mật</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-copyright">© 2026 Urflora. Xinh tươi như hoa.</p>
+      </div>
+    </footer>
+    <script>
+      function add(button) {
+        const productNums = button.parentElement;
+        const productNums_text =
+          productNums.querySelector(".product_nums_text");
+        let currentNums = parseInt(productNums_text.innerText);
+        currentNums++;
+        productNums_text.innerText = currentNums;
+      }
+      function remove(button) {
+        const productNums = button.parentElement;
+        const productNums_text =
+          productNums.querySelector(".product_nums_text");
+        let currentNums = parseInt(productNums_text.innerText);
+        if (currentNums > 1) {
+          currentNums--;
+        }
+        productNums_text.innerText = currentNums;
+      }
+    </script>
+  </body>
+</html>
