@@ -1,0 +1,136 @@
+<!-- Phụ trách: Nguyễn Hoàng Hiền Hậu - B2407526 -->
+ 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URFLORA | Xinh tươi như hoa</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">      
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<!--===========HEADER==========-->
+    <header class="header">
+        <!-- logo trang web -->
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <!-- anh logo -->
+                <img src="images/logo.svg" alt="Logo Urflora">
+            </a>
+            
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">Trang chủ</a>
+                <a href="shop.html" class="nav-link">Sản phẩm</a>
+            </nav>
+            
+            <div class="header-actions">
+                <!-- Nhóm các icon chức năng bên phải header: giỏ hàng, tài khoản -->
+                <a href="cart.html" id="cart-link" class="cart-icon-wrapper">
+                    <span class="material-icons">shopping_cart</span>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+                <a href="auth.html" id="auth-link" class="cart-icon-wrapper">
+                    <span class="material-icons">person_outline</span>
+                </a>
+            </div>
+        </div>
+    </header>
+<!--==========MAIN===========-->
+<main class="small-container"> <!--Khối bao trọn nội dung & css của phần detail-->
+    <div class="breadcrumbs"> <!--Thanh điều hướng phụ vị trí hiện tại-->
+        <a href="index.html">Trang chủ </a> <i class="fa-solid fa-chevron-right"></i> <!--Thẻ <a> chứa đường link dẫn về Home(#:???)+thẻ <i> thể hiện icon > phía sau -->
+        <a href="shop.html">Sản phẩm </a> <i class="fa-solid fa-chevron-right"></i> 
+        <span id="ProductBreadcrumb"></span> <!--Tên sp hiện tại, JS sẽ đổ dữ liệu vào-->
+    </div>
+
+    <div class="col single-product"> <!--Khối hiển thị sản phẩm theo mô hình Flexbox bằng class row-->
+        
+        <div class="col-2 product-gallery"> <!--Chia giao diện thành 2 khối nhỏ 2 bên bằng col-2 với khối bên trái là khối ảnh sản phẩm-->
+            <div class="main-img-wrapper"> <!--Khung bao ảnh lớn-->
+                <span class="badge-best-seller" id="ProductBadge"></span> <!--Nhãn dán đè lên hình ảnh, JS sẽ đổ dữ liệu badge vào-->
+                <img src="" id="ProductImg" alt="">  <!--Chứa ảnh sp có thuộc tính ProductImg để đặt làm ảnh chính, JS sẽ gán src-->
+            </div>
+            
+            <div class="small-img-row" id="SmallImgRow"> <!--Hàng ảnh nhỏ phía dưới, để trống, JS sẽ sinh ra theo mảng gallery--></div>
+        </div> <!--Đóng toàn bộ cột bên trái-->
+        
+        <div class="col-2 product-info-details"> <!--Cột bên phải chứa thông tin sản phẩm -->
+            <div class="fresh-tag"> <!--Tạo nhãn dán nổi bật kèm icon -->
+                <span class="material-icons">local_florist</span>
+                <i class="fa-solid fa-seedling"></i> Nổi Bật
+            </div>
+            
+            <h1 id="ProductName"></h1> <!--Tên sp bằng tiêu đề lớn, JS sẽ đổ dữ liệu vào-->
+            
+            <div class="price-rating-row"> <!--Hàng hiển thị giá & đánh giá -->
+                <span class="product-price" id="ProductPrice"></span> <!--Giá ban đầu của sp, JS sẽ đổ dữ liệu vào-->
+                <span class="rating-badge"> 
+                    <i class="fa-solid fa-star"></i> 4.9 <span class="review-count">(100 đánh giá)</span>
+                </span> <!--Khối chứa điểm đánh giá kèm icon sao-->
+            </div>
+            
+            <p class="product-description" id="ProductDesc"></p> <!--Mô tả sp, JS sẽ đổ dữ liệu vào-->
+            
+            <div class="product-options-wrapper"> <!--Khung bao gồm size & số lượng-->
+                <div class="option-section-title">Size</div> <!--Tiêu đề size-->
+                <div class="size-group" id="SizeGroup"></div> <!--Để trống, JS sẽ render các option size tương ứng theo từng sản phẩm-->
+                
+                <div class="quantity-row"> <!--Hàng xử lý số lượng mua -->
+                    <div class="option-section-title">Số lượng</div><!--Khối thể hiện phấn số lượng-->
+                    <div class="quantity-controller"><!--Khối các nút-->
+                        <button type="button" class="quantity-btn" id="btn-decrease">—</button> <!--Nút giảm (-)-->
+                        <span class="quantity-number" id="quantity-val">1</span> <!--Số lượng mặc định (1)-->
+                        <button type="button" class="quantity-btn" id="btn-increase">+</button> <!--Nút tăng(+)-->
+                    </div>
+                </div> <!--Đóng khối nút-->
+            </div> <!--Đóng khối xử lý số lượng mua-->
+            
+            <a href="#" id="btn-add-to-cart" class="btn btn-primary full-width-btn"> <!--Thẻ liên kết định dạng bằng nút bấm để liên kết thêm sp vào giỏ hàng-->
+                <i class="fa-solid fa-bag-shopping"></i> Thêm vào giỏ hàng <!--Hiển thị thêm vào giỏ hàng kèm icon giỏ -->
+            </a>
+            
+            <div class="features-badge-row"> <!--Khối tính năng phụ-->
+                <div class="feature-badge delivery"> <!--2 tính năng kèm icon-->
+                    <div class="badge-icon"><span class="material-icons">local_shipping</span></div>
+                    <span>Giao trong ngày</span>
+                </div>
+                <div class="feature-badge freshness">
+                    <div class="badge-icon"><span class="material-icons">favorite</span></div>
+                    <span>Hoa tươi</span>
+                </div>
+            </div> <!--Đóng khối tính năng-->
+        </div> <!--Đóng cột phải-->
+
+    </div> <!--Đóng toàn bộ phần chi tiết sp-->
+</main>
+<!--==========FOOTER===========-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-flex">
+                <!-- Flexbox chia footer thành nhiều cột: giới thiệu + danh mục liên kết -->
+                <div>
+                    <a href="#" class="footer-logo">URFLORA</a>
+                    <p class="footer-desc">Lựa chọn trải nghiệm hoa tươi tắn rực rỡ cho mọi khoảnh khắc. Nổi bật, vui nhộn và tràn đầy sinh lực.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Khám Phá</h4>
+                    <ul>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Về Chúng Tôi</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Hướng Dẫn Chăm Sóc</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Vận Chuyển</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Chính Sách Bảo Mật</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <p class="footer-copyright">© 2026 Urflora. Xinh tươi như hoa.</p>
+        </div>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/detail.js"></script>
+</body>
+</html>

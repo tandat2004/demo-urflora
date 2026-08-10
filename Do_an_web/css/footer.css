@@ -1,0 +1,82 @@
+
+.footer {
+    background-color: var(--surface-alt, #fef7ff); /* Thêm fallback màu nếu thiếu biến */
+    padding: 3rem 0 2rem; 
+    border-top: 1px solid var(--border-color, #f2e8f2);
+}
+
+.footer-flex {
+    display: flex;
+    flex-direction: column; 
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    text-align: center; 
+}
+
+.footer-logo {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Footer Text & Links */
+.footer-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-heading {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list-item {
+    margin-bottom: 0.75rem; /* Tăng khoảng cách các link một chút để dễ bấm trên cảm ứng */
+}
+
+.footer-list-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-list-link:hover {
+    color: var(--primary); /* Hiệu ứng đổi màu khi chạm/hover */
+}
+
+/* =========================================================
+   MỞ RỘNG CHO TABLET & DESKTOP (Min-width: 768px)
+   ========================================================= */
+@media (min-width: 768px) {
+    .footer {
+        padding: 4rem 0 2rem; /* Trả lại padding lớn cho PC */
+    }
+
+    .footer-flex {
+        flex-direction: row; /* Dàn hàng ngang trên màn hình lớn */
+        justify-content: space-between;
+        text-align: left; /* Đưa chữ về căn trái như bản gốc của bạn */
+    }
+
+    /* Giới hạn chiều rộng của cột chứa Logo và mô tả để không chiếm quá nhiều chỗ */
+    .footer-flex > div:first-child {
+        max-width: 400px; 
+    }
+}

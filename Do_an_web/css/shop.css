@@ -1,0 +1,122 @@
+/* <!-- Huynh Phuoc Khai B2408856 --> */
+
+.shop-hero {
+    text-align: center;      /* Căn giữa toàn bộ chữ bên trong khối */
+    padding: 3rem 0 2.5rem;  /* Khoảng đệm: trên 3rem, trái-phải 0, dưới 2.5rem */
+    max-width: 800px;        /* Giới hạn chiều rộng tối đa là 800px để chữ không bị dàn quá ngang */
+    margin: 0 auto;          /* Căn giữa khối này ra giữa màn hình (trên-dưới 0, trái-phải tự động) */
+}
+
+/* Định dạng cho Tiêu đề chính của trang cửa hàng */
+.shop-title {
+    font-size: 3rem;         /* Kích thước chữ rất to (khoảng 48px tùy gốc) */
+    line-height: 1.15;       /* Khoảng cách giữa các dòng chữ thu hẹp lại cho gọn */
+    margin-bottom: 1.25rem;  /* Khoảng cách đẩy phần tử phía dưới cách ra 1.25rem */
+    color: var(--text-dark, #2d2333); /* Sử dụng màu chữ tối từ biến toàn cục, nếu không có thì dùng #2d2333 */
+}
+
+/* Định dạng cho đoạn văn bản mô tả phụ bên dưới tiêu đề */
+.shop-subtitle {
+    color: var(--text-muted); /* Màu chữ mờ (xám) */
+    font-size: 1.05rem;       /* Chữ to hơn bình thường một chút */
+    line-height: 1.6;         /* Khoảng cách dòng thoáng (1.6 lần cỡ chữ) giúp dễ đọc */
+    margin-bottom: 2rem;      /* Khoảng cách đẩy phần tử phía dưới (Bộ lọc) cách ra 2rem */
+}
+/* Khung chứa các nút lọc (Ví dụ: Tất cả, Hoa hồng, Hoa cúc...) */
+.filter-pills {
+    display: flex;            /* Kích hoạt Flexbox để sắp xếp các nút nằm ngang */
+    justify-content: center;  /* Căn giữa tập hợp các nút ra giữa màn hình */
+    gap: 0.75rem;             /* Khoảng cách giữa các nút là 0.75rem */
+    flex-wrap: wrap;          /* Cho phép các nút tự động rớt xuống dòng nếu màn hình nhỏ không đủ chỗ chứa */
+}
+.hight-light{
+    color: var(--primary); /* Sử dụng màu chủ đạo từ biến toàn cục */
+}
+/* Định dạng cho từng nút lọc (Pill) */
+.pill {
+    border: none;             /* Xóa đường viền mặc định của nút */
+    background: #ffffffaa;    /* Màu nền trắng có độ trong suốt (thêm 'aa' ở mã hex) */
+    color: var(--text-dark, #2d2333); /* Màu chữ tối */
+    padding: 0.7rem 1.5rem;   /* Khoảng đệm bên trong nút: trên-dưới 0.7rem, trái-phải 1.5rem */
+    border-radius: 999px;     /* Bo tròn nút tối đa để tạo hình viên thuốc (pill) */
+    font-weight: 600;         /* Làm chữ đậm lên mức 600 */
+    font-size: 0.95rem;       /* Kích thước chữ vừa phải */
+    cursor: pointer;          /* Biến con trỏ chuột thành hình bàn tay khi chỉ vào */
+    transition: var(--transition); /* Thêm hiệu ứng chuyển đổi mượt mà (dùng biến toàn cục) */
+}
+
+/* Hiệu ứng khi rê chuột (hover) vào nút lọc */
+.pill:hover {
+    background: #ffffff;      /* Đổi màu nền thành trắng tinh hoàn toàn */
+}
+
+/* Hiệu ứng cho nút lọc đang được chọn (active) */
+.pill.active {
+    background: var(--primary); /* Đổi nền sang màu chủ đạo (ví dụ: hồng) */
+    color: #fff;                /* Đổi màu chữ thành trắng để nổi bật trên nền đậm */
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15); /* Tạo bóng đổ mờ xung quanh nút để tạo cảm giác nổi */
+}
+
+/* Khung bọc nút để căn giữa */
+.shop-more-wrapper {
+    display: flex;
+    justify-content: center;      /* Đẩy nút ra giữa trang */
+    margin: 3rem 0 4rem;          /* Khoảng cách trên 3rem, dưới 4rem so với các thành phần khác */
+}
+
+/* Định dạng nút Xem thêm */
+.btn-more {
+    background: #fff;
+    border: 1px solid #e4dfe9;    /* Viền mỏng màu xám */
+    color: var(--text-dark, #2d2333);
+    font-weight: 600;
+    padding: 0.9rem 1.75rem;
+    border-radius: 999px;         /* Bo tròn viên thuốc */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;                  /* Khoảng cách giữa chữ và icon (nếu có) */
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Hiệu ứng rê chuột vào nút Xem thêm */
+.btn-more:hover {
+    background: #f7f5fa;          /* Đổi nền sang màu xám cực nhạt */
+}
+@media (min-width: 992px) {
+    /* Đang là 3 cột (xem ở media 768px), ở đây có thể ghi đè logic lưới tùy thiết kế */
+    .shop-grid {
+        grid-template-columns: 1fr 1fr; /* Chia lưới thành 2 cột đều nhau */
+    }
+    
+    /* Ghi đè cột chứa các thẻ nhỏ */
+    .shop-side-stack {
+        grid-column: 1 / -1;      /* Cho phép khối này trải dài từ mép trái sang mép phải lưới (chiếm toàn bộ hàng) */
+        flex-direction: row;      /* Chuyển các thẻ nhỏ từ xếp dọc thành xếp ngang */
+    }
+}
+@media (min-width: 768px) {
+    /* Tiêu đề trang to lên */
+    .shop-title {
+        font-size: 2.1rem;
+    }
+    
+    /* Đổi cấu trúc lưới LỚN (Thay vì 1 cột trên Mobile thì giờ chia làm 3 cột) */
+    .shop-grid {
+        grid-template-columns: 1.6fr 1.2fr 1fr; 
+        /* Cột 1 (thẻ to nhất) chiếm 1.6 phần
+           Cột 2 (thẻ cao) chiếm 1.2 phần
+           Cột 3 (thẻ xếp chồng) chiếm 1 phần */
+    }
+    
+    /* Chuyển thẻ đặc biệt (Feature Card) sang dạng nằm ngang thay vì dọc như trên Mobile */
+    .shop-card-feature {
+        flex-direction: row;      /* Ảnh bên trái, nội dung chữ bên phải */
+    }
+    
+    /* Trả lại cột xếp chồng dạng dọc ở màn Tablet */
+    .shop-side-stack {
+        grid-column: auto;        /* Trở về chiếm 1 cột bình thường theo lưới định sẵn */
+        flex-direction: column;   /* Xếp dọc từ trên xuống */
+    }
+}

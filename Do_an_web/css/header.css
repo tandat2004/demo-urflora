@@ -1,0 +1,166 @@
+.header {
+    background-color: var(--surface-color);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    /* Mobile: cho phép logo/nav/actions xuống dòng thay vì bị bể layout khi màn hình quá hẹp */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    row-gap: 0.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-top: 10px;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    /* Mobile: khoảng cách hẹp hơn giữa các link, mở rộng lại ở desktop bên dưới */
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cart-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--tertiary);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--surface-color);
+}
+
+/* ---------- Dropdown thông tin user ở Header ---------- */
+.auth-link--logged-in {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.auth-link__avatar {
+    font-size: 32px;
+    color: #e843a3;
+    vertical-align: middle;
+}
+
+.auth-link__name {
+    font-size: 0.95rem;
+    color: #2d2333;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: #ffffff;
+    min-width: 260px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid #eddcf0;
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: default;
+}
+
+.user-dropdown--open {
+    display: flex;
+}
+
+.user-dropdown__avatar {
+    font-size: 60px;
+    color: #e843a3;
+    margin-bottom: 8px;
+}
+
+.user-dropdown__name {
+    margin: 0;
+    color: #2d2333;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.user-dropdown__email {
+    margin: 4px 0 15px 0;
+    color: #777;
+    font-size: 0.85rem;
+}
+
+.user-dropdown__divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #f3e8f7;
+    margin-bottom: 15px;
+}
+
+.user-dropdown__logout-btn {
+    width: 100%;
+    background: #e843a3;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* MOBILE-FIRST: từ 768px trở lên mới nới rộng khoảng cách menu như bản desktop gốc */
+@media (min-width: 768px) {
+    .nav {
+        gap: 2rem;
+    }
+}

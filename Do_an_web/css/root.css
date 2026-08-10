@@ -1,0 +1,25 @@
+:root {
+    --primary: #e040a0;      
+    --primary-bg: #ffd6ee;   
+    --secondary: #7c52aa;    
+    --tertiary: #0096cc;    
+    
+    --bg-color: #fef7ff;      
+    --surface-color: #ffffff; 
+    
+    --text-dark: #2e1a28;    
+    --text-muted: #604868;    
+    --border-color: #f2e8f2;  
+    
+    --font-main: 'Montserrat', sans-serif;
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-pill: 9999px;  
+    
+    /* Đổ bóng có pha màu */
+    --shadow-sm: 0 4px 16px rgba(224, 64, 160, 0.08);
+    --shadow-hover: 0 12px 32px rgba(224, 64, 160, 0.18); 
+    
+    --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}

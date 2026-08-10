@@ -1,0 +1,279 @@
+*{
+    margin:0;  /* Xóa khoảng cách mặc định bên ngoài của tất cả phần tử */
+    padding:0; /* Xóa khoảng cách bên trong mặc định của tất cả phần tử */
+    box-sizing:border-box;  /* Chiều rộng và chiều cao sẽ bao gồm cả padding và border */
+    font-family:'Segoe UI', sans-serif;  /* Đặt font chữ mặc định cho toàn bộ trang */
+}
+
+/* ================= BODY ================= */
+body {
+    background: #f8f1f7;  /* Màu nền của toàn bộ trang */
+    display: flex;  /* Biến body thành Flexbox */
+    flex-direction: column;  /* Các phần tử con sắp xếp theo chiều dọc */
+    min-height: 100vh;  /* Chiều cao tối thiểu bằng 100% chiều cao màn hình */ 
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    flex: 1; /* Chiếm toàn bộ không gian còn lại của body */               
+    display: flex;   /* Sử dụng Flexbox */
+    flex-direction: column; /* Sắp xếp các phần tử theo cột */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    padding: 40px 5%; /* Khoảng cách bên trong: trên dưới 40px, trái phải 5% */
+}
+
+/* ================= LOGO ================= */
+.logo {
+    text-align: center;  /* Căn giữa nội dung */
+    margin-bottom: 40px; /* Khoảng cách phía dưới logo */
+}
+
+.logo h1 {
+    color: #e843a3; /* Màu chữ */
+    font-size: 36px;  /* Kích thước chữ */
+    display: flex;  /* Dùng Flexbox */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 8px; /* Khoảng cách giữa các phần tử */
+    font-family: 'Georgia', serif;  /* Đổi font chữ */
+    letter-spacing: 2px; /* Tăng khoảng cách giữa các ký tự */
+}
+
+.logo h1 span {
+    font-size: 30px; /* Kích thước của icon 🌸 */
+    margin: 0 -4px; /* Điều chỉnh khoảng cách giữa icon và chữ */
+}
+
+.logo p {
+    color: #666; /* Màu chữ */
+    margin-top: 5px; /* Khoảng cách phía trên */
+    font-size: 14px;  /* Kích thước chữ */
+}
+
+/* ================= FORM ================= */
+.form-box {
+    width: 100%;
+    max-width: 550px; 
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.hidden{
+    display: none;
+}
+/* ================= TAB ================= */
+.tabs{
+    display:flex; /* Hiển thị Flexbox */
+    background:#f3e8f7; /* Màu nền */
+    border-radius:50px;  /* Bo góc */
+    padding:5px; /* Khoảng cách bên trong */
+    margin-bottom:30px;  /* Khoảng cách phía dưới */
+}
+
+.tabs button{
+    flex:1; /* Hai nút chia đều chiều rộng */
+    border:none; /* Bỏ viền */
+    background:none; /* Không màu nền */
+    padding:15px; /* Khoảng cách bên trong */
+    font-size:22px; /* Kích thước chữ */
+    cursor:pointer; /* Đổi con trỏ thành bàn tay */
+    border-radius:50px; /* Bo góc */
+}
+
+.tabs .active{
+    background:white; /* Màu nền nút đang chọn */
+    color:#e843a3; /* Màu chữ */
+    font-weight:bold; /* In đậm */
+}
+
+/* ================= LABEL ================= */
+label{
+    display:block; /* Hiển thị thành khối */
+    text-align:left; /* Căn trái */
+    margin-top:20px; /* Khoảng cách phía trên */
+    margin-bottom:10px; /* Khoảng cách phía dưới */
+    color:#555; /* Màu chữ */
+    font-size:18px; /* Kích thước chữ */
+}
+
+/* ================= INPUT ================= */
+input{
+    width:100%; /* Chiếm toàn bộ chiều rộng */
+    padding:18px; /* Khoảng cách bên trong */
+    border:2px solid #eddcf0; /* Viền */
+    border-radius:25px; /* Bo góc */
+    font-size:18px; /* Kích thước chữ */
+    margin-bottom:10px; /* Khoảng cách phía dưới */
+}
+
+input:focus{
+    outline:none; /* Bỏ viền mặc định khi chọn */
+    border-color:#e843a3; /* Đổi màu viền khi nhập */
+}
+
+/* ================= FORGOT PASSWORD ================= */
+.forgot{
+    display:block; /* Hiển thị dạng khối */
+    text-align:right; /* Căn phải */
+    margin-top:5px; /* Khoảng cách phía trên */
+    color:#00a8ff; /* Màu chữ */
+    text-decoration:none; /* Bỏ gạch chân */
+}
+
+/* ================= BUTTON ================= */
+.submit-btn{
+    width:100%; /* Chiếm toàn bộ chiều rộng */
+    margin-top:30px; /* Khoảng cách phía trên */
+    border:none; /* Bỏ viền */
+    background:#e843a3; /* Màu nền */
+    color:white; /* Màu chữ */
+    padding:18px;  /* Khoảng cách bên trong */
+    border-radius:50px;  /* Bo góc */
+    font-size:22px; /* Kích thước chữ */
+    font-weight:bold; /* In đậm */
+    cursor:pointer; /* Con trỏ hình bàn tay */
+    transition:0.3s; /* Hiệu ứng chuyển đổi trong 0.3 giây */
+}
+
+.submit-btn:hover{
+    background:#d63396; /* Đổi màu khi rê chuột */
+    transform:translateY(-2px); /* Di chuyển nút lên 2px */
+}
+
+/* ================= LOGO HEADER ================= */
+.logo-art {
+    margin-left: 0; /* khoảng cách bên trái */
+    font-family: 'Georgia', serif; /* kiểu chữ của logo */
+    font-weight: 800; /* Độ đậm */
+    font-size: 32px; /* Kích thước chữ */
+    color: #e843a3; /* Màu chữ */
+    letter-spacing: 2px; /* Khoảng cách ký tự */
+    cursor: pointer; /* Con trỏ hình bàn tay */
+    display: flex; /* Flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.logo-art span {
+    font-size: 28px; /* Kích thước chữ của ký tự 🌸 */
+    margin: 0 -4px; /* khoảng cách bên ngoài */
+    transform: rotate(10deg); /* Xoay icon 10 độ */
+    display: inline-block; /* Hiển thị phần tử dưới dạng inline-block */
+    transition: transform 0.5s ease; /* Hiệu ứng xoay trong 0.5 giây */
+}
+
+
+.logo-art:hover span {
+    transform: rotate(180deg) scale(1.2);
+    /* Khi rê chuột:
+       - Xoay 180 độ
+       - Phóng to 1.2 lần */
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    padding: 15px 5%; /* Khoảng cách bên trong */
+    background: white; /* Màu nền */
+    display: flex; /* Flexbox */
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* Căn giữa */
+    border-bottom: 2px solid #f8f1f7;  /* Viền dưới */
+}
+
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép rớt dòng nếu thiếu chỗ */
+    justify-content: center;
+    gap: 15px;
+}
+
+.navbar .logo-nav {
+    font-size: 24px; /* Kích thước chữ */
+    font-weight: bold; /* In đậm */
+    color: #e843a3; /* Màu chữ */
+}
+
+.navbar nav a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: #555; /* Màu chữ */
+    margin-left: 0; /* Khoảng cách giữa các menu */
+    font-weight: 500; /* Độ đậm */
+    font-size: 14px;
+}
+/* ---------- Profile box tại trang auth.html sau khi đăng nhập ---------- */
+.profile-box {
+    text-align: center;
+    padding: 10px 0;
+}
+ 
+.profile-box__icon {
+    font-size: 80px;
+    color: #e843a3;
+    margin-bottom: 12px;
+}
+ 
+.profile-box__title {
+    color: #2d2333;
+    margin-bottom: 6px;
+    font-family: 'Georgia', serif;
+}
+ 
+.profile-box__email {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+ 
+.profile-box__status {
+    background: #f3e8f7;
+    padding: 15px;
+    border-radius: 15px;
+    color: #e843a3;
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+ 
+.profile-box__logout-btn {
+    width: 100%;
+    border-radius: 50px;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    text-align: center; /* Căn giữa */
+    padding: 30px;  /* Khoảng cách bên trong */
+    color: #888; /* Màu chữ */
+    background: #f8f1f7; /* Màu nền */
+    font-size: 16px; /* Kích thước chữ */
+}
+
+/* ================= MỞ RỘNG CHO MÀN HÌNH LỚN (Tablet/Desktop) ================= */
+/* Thêm đoạn này vào CUỐI FILE auth.css */
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Trả lại hàng ngang */
+        justify-content: space-between;
+    }
+    .navbar nav a {
+        margin-left: 30px; /* Trả lại khoảng cách cho menu */
+        font-size: 16px;
+    }
+    .logo h1 {
+        font-size: 60px; /* Font to lại như cũ trên PC */
+    }
+    .logo h1 span {
+        font-size: 50px;
+    }
+    .logo p {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+    .form-box {
+        padding: 40px; /* Trả lại padding rộng rãi */
+    }
+}

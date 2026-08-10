@@ -1,0 +1,320 @@
+<!-- Huynh Phuoc Khai B2408856 -->
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<!-- Cấu hình viewport để trang web hiển thị tốt trên các thiết bị di động (Responsive) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URFLORA | Sản phẩm</title>
+
+<!-- Liên kết đến các file CSS định dạng giao diện -->
+<link rel="stylesheet" href="css/main.css"> <!-- CSS chứa các thiết lập dùng chung cho toàn bộ trang -->
+<link rel="stylesheet" href="css/shop.css"> <!-- CSS định dạng dành riêng cho trang Sản phẩm này -->
+<link rel="stylesheet" href="css/home.css">
+
+<!-- Nhúng font chữ Montserrat từ Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Nhúng bộ icon Material Icons của Google -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER: THANH ĐIỀU HƯỚNG TRÊN CÙNG -->
+    <header class="header">
+        <!-- logo trang web -->
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <!-- anh logo -->
+                <img src="images/logo.svg" alt="Logo Urflora">
+            </a>
+            
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Trang chủ</a>
+                <a href="shop.html" class="nav-link active">Sản phẩm</a>
+            </nav>
+            
+            <div class="header-actions">
+                <!-- Nhóm các icon chức năng bên phải header: giỏ hàng, tài khoản -->
+                <a href="cart.html" id="cart-link" class="cart-icon-wrapper">
+                    <span class="material-icons">shopping_cart</span>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+                <a href="auth.html" id="auth-link" class="cart-icon-wrapper">
+                    <span class="material-icons">person_outline</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN: NỘI DUNG CHÍNH CỦA TRANG SẢN PHẨM -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- SECTION 1: TIÊU ĐỀ TRANG VÀ BỘ LỌC (HERO SECTION) -->
+            <section class="shop-hero">
+                <!-- Tiêu đề chính của trang, kết hợp thẻ span để đổi màu chữ nhấn mạnh -->
+                <h1 class="shop-title">Hoa <span class="hight-light">Tươi Vui</span> Cho Mỗi Ngày</h1>
+                <p class="shop-subtitle">Khám phá bộ sưu tập hoa tươi tuyển chọn đầy năng lượng và hoa lụa vĩnh cửu rực rỡ. Được thiết kế để mang một chút niềm vui đến không gian của bạn.</p>
+
+                <!-- BỘ LỌC (FILTER PILLS): Các nút bấm để phân loại sản phẩm -->
+                <div class="filter-pills">
+                    <!-- Thuộc tính data-filter được dùng để làm dấu kết nối với Javascript, giúp JS biết cần lọc ra loại hoa nào khi người dùng click vào -->
+                    <button class="pill active" data-filter="all">Tất Cả Phép Màu</button>
+                    <button class="pill" data-filter="fresh">Hoa Tươi</button>
+                    <button class="pill" data-filter="artificial">Hoa Lụa Vĩnh Cửu</button>
+                </div>
+            </section>
+
+            <!-- SECTION 2: DANH SÁCH CÁC SẢN PHẨM -->
+            <section class="product-grid" id="shop-grid">
+                <div class="card" data-category="fresh">
+                    <a class="card-link" href="#">
+                        <div class="card-img-wrapper">
+                            <img src="images/maudonhong.jpg" alt="Lời Hứa Màu Hồng">
+                            <span class="badge">Tươi</span>
+                        </div>
+                    </a>
+                    <h3 class="card-title">Lời Hứa Màu Hồng</h3>
+                    <p class="card-desc">Sự bùng nổ của mẫu đơn hồng rực để thắp sáng bất kỳ căn phòng nào.</p>
+                    <div class="card-footer">
+                        <div class="item-info">
+                            <p class="item-id" hidden>SP01</p>
+                            <p class="item-name" hidden>Lời Hứa Màu Hồng</p>
+                            <span class="card-price item-price">45.000 VNĐ</span>
+                        </div>
+                        <button class="add-btn add-cart">
+                            <span class="material-icons">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="fresh">
+                    <a class="card-link" href="#">
+                        <div class="card-img-wrapper">
+                            <img src="images/cattuongtim.jpg" alt="Sương Mù Tím">
+                            <span class="badge">Tươi</span>
+                        </div>
+                    </a>
+                    <h3 class="card-title">Sương Mù Tím</h3>
+                    <p class="card-desc">Cát tường tím thanh lịch nhẹ nhàng mang lại cảm giác bình lặng.</p>
+                    <div class="card-footer">
+                        <div class="item-info">
+                            <p class="item-id" hidden>SP02</p>
+                            <p class="item-name" hidden>Sương Mù Tím</p>
+                            <span class="card-price item-price">55.000 VNĐ</span>
+                        </div>
+                        <button class="add-btn add-cart">
+                            <span class="material-icons">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="artificial">
+                    <a class="card-link" href="#">
+                        <div class="card-img-wrapper">
+                            <img src="images/camtucau.jpg" alt="Cẩm Tú Cầu Xanh">
+                            <span class="badge badge-artificial">Hoa lụa</span>
+                        </div>
+                    </a>
+                    <h3 class="card-title">Cẩm Tú Cầu Xanh</h3>
+                    <p class="card-desc">Niềm vui vô tận từ những bông hoa giả cao cấp và sang trọng.</p>
+                    <div class="card-footer">
+                        <div class="item-info">
+                            <p class="item-id" hidden>SP03</p>
+                            <p class="item-name" hidden>Cẩm Tú Cầu Xanh</p>
+                            <span class="card-price item-price">100.000 VNĐ</span>
+                        </div>
+                        <button class="add-btn add-cart">
+                            <span class="material-icons">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="fresh">
+                    <a class="card-link" href="#">
+                        <div class="card-img-wrapper">
+                            <img src="images/hoadenji.png" alt="Trộn Niềm Vui">
+                            <span class="badge badge-bestseller">Bán chạy</span>
+                        </div>
+                    </a>
+                    <h3 class="card-title">Trộn Niềm Vui</h3>
+                    <p class="card-desc">Một thiết kế cứ ngỡ như từ anime ChainSaw Man ra.</p>
+                    <div class="card-footer">
+                        <div class="item-info">
+                            <p class="item-id" hidden>SP04</p>
+                            <p class="item-name" hidden>Trộn Niềm Vui</p>
+                            <span class="card-price item-price">65.000 VNĐ</span>
+                        </div>
+                        <button class="add-btn add-cart">
+                            <span class="material-icons">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="fresh">
+                    <a class="card-link" href="#">
+                        <div class="card-img-wrapper">
+                            <img src="images/hoa1.jpg" alt="Hoa hồng đỏ">
+                            <span class="badge badge-bestseller">Bán chạy</span>
+                        </div>
+                    </a>
+                    <h3 class="card-title">Hoa hồng đỏ</h3>
+                    <p class="card-desc">Màu đỏ của hoa tươi</p>
+                    <div class="card-footer">
+                        <div class="item-info">
+                            <p class="item-id" hidden>SP05</p>
+                            <p class="item-name" hidden>Hoa hồng đỏ</p>
+                            <span class="card-price item-price">85.000 VNĐ</span>
+                        </div>
+                        <button class="add-btn add-cart">
+                            <span class="material-icons">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="fresh">
+                    <a class="card-link" href="#">
+                        <div class="card-img-wrapper">
+                            <img src="images/hoa2.jpg" alt="Hoa màu tím">
+                            <span class="badge badge-bestseller">Bán chạy</span>
+                        </div>
+                    </a>
+                    <h3 class="card-title">Hoa màu tím</h3>
+                    <p class="card-desc">Hoa màu tím, mộng mơ.</p>
+                    <div class="card-footer">
+                        <div class="item-info">
+                            <p class="item-id" hidden>SP06</p>
+                            <p class="item-name" hidden>Hoa màu tím</p>
+                            <span class="card-price item-price">90.000 VNĐ</span>
+                        </div>
+                        <button class="add-btn add-cart">
+                            <span class="material-icons">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="fresh">
+                    <a class="card-link" href="#">
+                        <div class="card-img-wrapper">
+                            <img src="images/hoa3.jpg" alt="Hoa hồng">
+                            <span class="badge badge-bestseller">Bán chạy</span>
+                        </div>
+                    </a>
+                    <h3 class="card-title">Hoa hồng</h3>
+                    <p class="card-desc">...</p>
+                    <div class="card-footer">
+                        <div class="item-info">
+                            <p class="item-id" hidden>SP07</p>
+                            <p class="item-name" hidden>Hoa hồng</p>
+                            <span class="card-price item-price">65.000 VNĐ</span>
+                        </div>
+                        <button class="add-btn add-cart">
+                            <span class="material-icons">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="artificial">
+                    <a class="card-link" href="#">
+                        <div class="card-img-wrapper">
+                            <img src="images/hoa4.jpg" alt="Hoa lụa">
+                            <span class="badge badge-artificial">Hoa lụa</span>
+                        </div>
+                    </a>
+                    <h3 class="card-title">Hoa lụa</h3>
+                    <p class="card-desc">Hoa lụa là hoa giả á.</p>
+                    <div class="card-footer">
+                        <div class="item-info">
+                            <p class="item-id" hidden>SP08</p>
+                            <p class="item-name" hidden>Hoa lụa</p>
+                            <span class="card-price item-price">100.000 VNĐ</span>
+                        </div>
+                        <button class="add-btn add-cart">
+                            <span class="material-icons">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="artificial">
+                    <a class="card-link" href="#">
+                        <div class="card-img-wrapper">
+                            <img src="images/hoa5.png" alt="Hoa sương mù">
+                            <span class="badge badge-artificial">Hoa lụa</span>
+                        </div>
+                    </a>
+                    <h3 class="card-title">Hoa sương mù</h3>
+                    <p class="card-desc">Hoa sương mù, mộng mơ.</p>
+                    <div class="card-footer">
+                        <div class="item-info">
+                            <p class="item-id" hidden>SP09</p>
+                            <p class="item-name" hidden>Hoa sương mù</p>
+                            <span class="card-price item-price">65.000 VNĐ</span>
+                        </div>
+                        <button class="add-btn add-cart">
+                            <span class="material-icons">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="fresh">
+                    <a class="card-link" href="#">
+                        <div class="card-img-wrapper">
+                            <img src="images/hoa6.jpg" alt="Hoa tặng người yêu">
+                            <span class="badge badge-bestseller">Bán chạy</span>
+                        </div>
+                    </a>
+                    <h3 class="card-title">Hoa tặng người yêu</h3>
+                    <p class="card-desc">Dành tặng cho bà chả húiii.</p>
+                    <div class="card-footer">
+                        <div class="item-info">
+                            <p class="item-id" hidden>SP10</p>
+                            <p class="item-name" hidden>Hoa tặng người yêu</p>
+                            <span class="card-price item-price">65.000 VNĐ</span>
+                        </div>
+                        <button class="add-btn add-cart">
+                            <span class="material-icons">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- SECTION 3: NÚT XEM THÊM -->
+            <div class="shop-more-wrapper">
+                <!-- Nút bấm này có thể được gán sự kiện Javascript sau này để tải thêm dữ liệu sản phẩm từ mảng (Array) hoặc Database khi danh sách hoa dài ra -->
+                <button class="btn-more">
+                    Khám Phá Thêm Phép Màu <span class="material-icons">expand_more</span>
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER: CHÂN TRANG CỦA WEBSITE -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-flex">
+                <!-- Flexbox chia footer thành nhiều cột: giới thiệu + danh mục liên kết -->
+                <div>
+                    <a href="#" class="footer-logo">URFLORA</a>
+                    <p class="footer-desc">Lựa chọn trải nghiệm hoa tươi tắn rực rỡ cho mọi khoảnh khắc. Nổi bật, vui nhộn và tràn đầy sinh lực.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Khám Phá</h4>
+                    <ul>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Về Chúng Tôi</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Hướng Dẫn Chăm Sóc</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Vận Chuyển</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Chính Sách Bảo Mật</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <p class="footer-copyright">© 2026 Urflora. Xinh tươi như hoa.</p>
+        </div>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+/* ==========================================
+   1. RESET CSS & ĐỊNH DẠNG CHUNG
+   ========================================== */
+
+/* Áp dụng cho tất cả các thẻ trên trang web */
+* {
+    /*Cấu hình chung của trang web*/
+    margin: 0;
+    /* Xóa bỏ khoảng cách rìa mặc định */
+    padding: 0;
+    /* Xóa bỏ khoảng đệm mặc định */
+    box-sizing: border-box;
+    /* Kích thước phần tử bao gồm cả padding và border */
+}
+
+/* Định dạng cấu hình gốc cho toàn bộ trang */
+body {
+    font-family: var(--font-main);
+    /*font chữ*/
+    background-color: var(--bg-color);
+    /*Màu nên*/
+    color: var(--text-dark);
+    /*Màu chữ gốc*/
+}
+
+/* Định dạng mặc định cho thẻ liên kết */
+a {
+    text-decoration: none;
+    /*Xóa đường gạch chân mặc định*/
+    color: var(--text-muted);
+    /*Màu chữ mờ*/
+}
+
+/* Định dạng mặc định cho các đoạn văn bản */
+p {
+    color: var(--text-muted);
+    /*Màu chữ mờ*/
+    line-height: 1.6;
+    /* Khoảng cách giữa các dòng văn bản*/
+}
+
+/* ==========================================
+   2. BỐ CỤC CHUNG & THANH ĐIỀU HƯỚNG (LAYOUT)
+   ========================================== */
+
+/* Khung chứa giới hạn chiều rộng của nội dung */
+.small-container {
+    max-width: 1200px;
+    /* Chiều rộng tối đa của khung là 1200px */
+    margin: auto;
+    /* Căn giữa khung này ra giữa màn hình */
+    padding-left: 40px;
+    /* Căn giữa khung này ra giữa màn hình */
+    padding-right: 40px;
+    /* Khoảng đệm an toàn bên phải */
+}
+
+/* Thanh điều hướng phụ (Trang chủ > Cửa hàng > Sản phẩm) */
+.breadcrumbs {
+    margin-top: 25px;
+    /* Khoảng cách phía trên thanh điều hướng */
+    font-size: 13px;
+    /* Kích thước chữ nhỏ gọn */
+    color: var(--text-muted);
+    display: flex;
+    /* Kích hoạt Flexbox để xếp các mục nằm ngang */
+    align-items: center;
+    /* Căn giữa các mục theo chiều dọc */
+    gap: 8px;
+    /* Khoảng cách giữa các mục là 8px */
+}
+
+/* Liên kết trong thanh điều hướng */
+.breadcrumbs a {
+    color: var(--text-muted);
+    transition: var(--transition);
+    /* Hiệu ứng chuyển màu mượt mà khi hover */
+}
+
+/* Hiệu ứng khi di chuột vào liên kết điều hướng */
+.breadcrumbs a:hover {
+    color: var(--primary);
+    /* Đổi sang màu chủ đạo của website */
+}
+
+/* Định dạng các icon mũi tên / dấu xuyệt (i) ở giữa các link */
+.breadcrumbs i {
+    font-size: 10px;
+    /* Kích thước icon nhỏ hơn chữ */
+    color: #ccc;
+    /* Màu xám nhạt */
+}
+
+/* Khung chứa chia cột chính */
+.col {
+    display: flex;
+    flex-direction: column;
+    /* Kích hoạt Flexbox để xếp các cột nằm ngang */
+    flex-wrap: wrap;
+    /* Cho phép các cột tự động xuống dòng khi màn hình nhỏ */
+    align-item: stretch;
+    /* Đẩy các cột ra xa nhau, bám sát 2 mép */
+}
+
+
+/* ==========================================
+   3. KHU VỰC HÌNH ẢNH SẢN PHẨM (IMAGES)
+   ========================================== */
+
+/* Khung bọc khu vực chi tiết sản phẩm */
+.single-product {
+    margin-top: 35px;
+    /* Khoảng cách với phần phía trên */
+    margin-bottom: 80px;
+    /* Khoảng cách với phần phía dưới */
+    gap: 5%;
+    /* Khoảng cách giữa cột ảnh và cột thông tin */
+}
+
+/* Cột chia đôi (Một bên chứa ảnh, một bên chứa thông tin) */
+.col-2 {
+    flex-basis: 47%;
+    /* Chiếm khoảng 47% chiều rộng của khung chứa */
+    min-width: 340px;
+    /* Chiều rộng tối thiểu là 340px*/
+}
+
+/* Khung bọc ảnh lớn để làm gốc tọa độ cho nhãn đè lên */
+
+.main-img-wrapper {
+    position: relative;
+    /* Làm mốc định vị cho các phần tử con dùng absolute */
+    width: 100%;
+    /* Chiếm trọn chiều rộng cột */
+}
+
+/* Nhãn "Bán chạy nhất" đè lên góc ảnh */
+.badge-best-seller {
+    position: absolute;
+    /* Định vị tuyệt đối theo khung `.main-img-wrapper` */
+    top: 20px;
+    /* Cách mép trên ảnh 20px */
+    left: 20px;
+    /* Cách mép trái ảnh 20px */
+    background-color: var(--primary);
+    /* Màu nền chủ đạo */
+    color: #ffffff;
+    /* Màu chữ trắng */
+    padding: 6px 16px;
+    /* Khoảng đệm trong nhãn (trên-dưới, trái-phải) */
+    font-size: 11px;
+    /* Chữ nhỏ */
+    font-weight: 700;
+    /* Chữ đậm */
+    text-transform: uppercase;
+    /* Ép chữ in hoa toàn bộ */
+    letter-spacing: 0.5px;
+    /* Giãn khoảng cách giữa các chữ cái */
+    border-radius: var(--radius-pill);
+    /* Bo tròn hai đầu dạng viên thuốc */
+    z-index: 10;
+    /* Đảm bảo nhãn luôn nằm nổi lên trên cùng của ảnh */
+    box-shadow: 0 4px 12px rgba(224, 64, 160, 0.2);
+    /* Tạo bóng đổ mờ màu hồng */
+}
+
+/* Định dạng cho tấm ảnh sản phẩm lớn chính */
+.col-2 #ProductImg {
+    display: block;
+    /* Loại bỏ khoảng trống thừa dưới chân ảnh của thẻ inline */
+    width: 100%;
+    /* Chiều rộng tự động giãn theo cột */
+    aspect-ratio: 1 / 1;
+    /* Ép ảnh luôn luôn là hình vuông tỉ lệ 1:1 */
+    object-fit: cover;
+    /* Giữ nguyên tỉ lệ ảnh, cắt gọn góc để không bị méo */
+    border-radius: 32px;
+    /* Bo tròn mạnh 4 góc ảnh */
+}
+
+/* Hàng chứa các ảnh nhỏ (thumbnails) bên dưới ảnh lớn */
+.small-img-row {
+    display: flex;
+    /* Xếp các ảnh nhỏ nằm ngang */
+    justify-content: flex-start;
+    /* Căn các ảnh từ bên trái qua */
+    gap: 16px;
+    /* Khoảng cách giữa các ảnh nhỏ là 16px */
+    margin-top: 20px;
+    /* Khoảng cách với ảnh lớn phía trên */
+}
+
+/* Khung bọc từng ô ảnh nhỏ */
+.small-img-col {
+    width: 80px;
+    /* Chiều rộng cố định 80px */
+    height: 80px;
+    /* Chiều cao cố định 80px (tạo ô vuông) */
+    cursor: pointer;
+    /* Biến con trỏ chuột thành hình bàn tay khi di vào */
+    border-radius: var(--radius-md);
+    /* Bo góc vừa phải */
+    overflow: hidden;
+    /* Ẩn các phần ảnh thừa bị tràn ra ngoài góc bo */
+    border: 2px solid transparent;
+    /* Viền ẩn mặc định (để không bị giật khung khi active) */
+    transition: var(--transition);
+    /* Hiệu ứng chuyển động mượt */
+}
+
+/* Tấm ảnh bên trong ô vuông nhỏ */
+.small-img-col img {
+    width: 100%;
+    /* Lấp đầy chiều rộng ô chứa */
+    height: 100%;
+    /* Lấp đầy chiều cao ô chứa */
+    object-fit: cover;
+    /* Cắt ảnh chống méo */
+}
+
+
+/* ==========================================
+   4. THÔNG TIN CHI TIẾT SẢN PHẨM (INFO)
+   ========================================== */
+
+/* Thẻ tag đặc tính (ví dụ: "Hàng tươi mới") */
+.fresh-tag {
+    color: var(--secondary);
+    /* Sử dụng màu phụ của web */
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    /* Kích hoạt Flexbox để chèn icon nằm ngang với chữ */
+    align-items: center;
+    /* Căn giữa dọc */
+    gap: 6px;
+    /* Khoảng cách giữa icon và chữ */
+    margin-bottom: 8px;
+    /* Khoảng cách dưới */
+    margin-top: 10px;
+    /* Khoảng cách trên */
+}
+
+/* Tên sản phẩm (Thẻ H1) */
+.product-info-details h1 {
+    font-size: 46px;
+    /* Kích thước chữ rất lớn nổi bật */
+    font-weight: 700;
+    /* Chữ siêu đậm */
+    line-height: 1.15;
+    /* Khoảng cách dòng hẹp để tiêu đề trông gọn gàng */
+    margin-bottom: 14px;
+    /* Khoảng cách với phần bên dưới */
+    color: var(--text-dark);
+}
+
+/* Hàng chứa giá tiền và đánh giá sao */
+.price-rating-row {
+    display: flex;
+    /* Xếp giá và đánh giá nằm ngang */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    gap: 20px;
+    /* Khoảng cách giữa giá và đánh giá */
+    margin-bottom: 24px;
+}
+
+/* Chữ hiển thị giá tiền */
+.product-price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
+    /* Giá tiền dùng màu chủ đạo */
+}
+
+/* Khối nhãn hiển thị số sao đánh giá */
+.rating-badge {
+    background-color: #f2e8f2;
+    /* Nền màu hồng nhạt */
+    padding: 6px 14px;
+    /* Khoảng đệm trong nhãn */
+    border-radius: var(--radius-pill);
+    /* Bo tròn dạng viên thuốc */
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+    display: flex;
+    /* Xếp icon sao và chữ nằm ngang */
+    align-items: center;
+    gap: 5px;
+}
+
+/* Ngôi sao bên trong nhãn đánh giá */
+.rating-badge i {
+    color: var(--primary);
+    /* Sao có màu hồng chủ đạo */
+    font-size: 12px;
+}
+
+/* Phần hiển thị số lượng bài đánh giá */
+.rating-badge .review-count {
+    color: var(--text-muted);
+    /* Màu chữ mờ hơn */
+    font-weight: 400;
+    /* Chữ nét mảnh bình thường */
+}
+
+
+/* Đoạn mô tả ngắn về sản phẩm */
+.product-description {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+/* ==========================================
+   5. BỘ LỰA CHỌN SẢN PHẨM (OPTIONS & BUTTONS)
+   ========================================== */
+
+/* Hộp lớn bao quanh khu vực chọn Size và Số lượng */
+.product-options-wrapper {
+    background-color: #fff0fa;
+    /* Màu nền hồng sữa*/
+    padding: 30px;
+    /* Khoảng đệm rộng rãi bên trong hộp */
+    border-radius: 32px;
+    /* Bo góc hộp cực mạnh đồng bộ với ảnh */
+    max-width: 100%;
+    /* Không vượt quá chiều rộng cột */
+    box-sizing: border-box;
+    /* Đảm bảo padding không làm tăng kích thước hộp */
+    margin: 24px 0;
+    /* Tạo khoảng cách phía trên và phía dưới hộp */
+}
+
+/* Tiêu đề của các mục chọn (Ví dụ: "CHỌN KÍCH CỠ", "SỐ LƯỢNG") */
+.option-section-title {
+    font-size: 13px;
+    font-weight: 800;
+    /* Chữ rất đậm */
+    color: var(--text-dark);
+    text-transform: uppercase;
+    /* Ép chữ in hoa */
+    letter-spacing: 0.5px;
+    /* Giãn chữ rộng ra một chút */
+    margin-bottom: 16px;
+    /* Khoảng cách với các nút tùy chọn bên dưới */
+}
+
+/* Nhóm chứa các nút chọn size */
+.size-group {
+    display: flex;
+    /* Xếp các nút chọn size nằm ngang */
+    gap: 14px;
+    /* Khoảng cách giữa các nút size */
+    margin-bottom: 28px;
+    /* Khoảng cách với khu vực tiếp theo */
+}
+
+/* Khung bọc từng lựa chọn size */
+.size-option {
+    flex: 1;
+    /* Các nút tự chia đều không gian bằng nhau */
+}
+
+/* Ẩn nút tròn mặc định của thẻ Radio HTML */
+.size-option input[type="radio"] {
+    display: none;
+}
+
+/* Biến thẻ Label (nhãn chữ) thành giao diện cái nút bấm thay thế */
+.size-option label {
+    display: block;
+    /* Biến thành khối để căn chỉnh dễ hơn */
+    text-align: center;
+    /* Căn chữ ra giữa nút */
+    padding: 14px 10px;
+    /* Khoảng đệm trên-dưới và trái-phải */
+    border: 1px solid var(--border-color);
+    /* Đường viền mặc định */
+    border-radius: var(--radius-pill);
+    /* Bo tròn viên thuốc */
+    background-color: var(--surface-color);
+    /* Màu nền nút */
+    color: var(--text-muted);
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    /* Di chuột vào hiện hình bàn tay */
+    transition: var(--transition);
+    /* Hiệu ứng mượt khi bấm chọn */
+}
+
+/* Khi nút radio được chọn, định dạng lại thẻ LABEL liền kề ngay sau nó */
+.size-option input[type="radio"]:checked+label {
+    border: 2px solid var(--primary);
+    /* Đổi viền sang màu chủ đạo dày hơn */
+    background-color: var(--primary-bg);
+    /* Đổi nền sang màu nền chủ đạo */
+    color: var(--text-dark);
+    /* Đổi chữ thành màu tối */
+    font-weight: 700;
+    /* Chữ đậm lên */
+}
+
+/* Hàng điều chỉnh số lượng mua */
+.quantity-row {
+    display: flex;
+    justify-content: space-between;
+    /* Đẩy tiêu đề sang trái, bộ nút sang phải */
+    align-items: center;
+    /* Căn giữa dọc */
+}
+
+/* Xóa khoảng cách dưới của tiêu đề trong hàng số lượng để cân đối */
+.quantity-row .option-section-title {
+    margin-bottom: 0;
+}
+
+/* Cụm điều khiển tăng giảm số lượng [ - ]  1  [ + ] */
+.quantity-controller {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Đẩy dấu trừ, số, dấu cộng cách đều */
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-pill);
+    /* Thiết kế bo tròn viên thuốc */
+    width: 140px;
+    /* Chiều rộng cố định của bộ nút */
+    padding: 8px 18px;
+    /* Khoảng đệm bên trong */
+}
+
+/* Định dạng chung cho 2 nút cộng (+) và trừ (-) */
+.quantity-btn {
+    background: none;
+    /* Xóa nền mặc định của button */
+    border: none;
+    /* Xóa viền mặc định của button */
+    color: var(--secondary);
+    /* Màu sắc nút lấy từ màu phụ */
+    font-size: 18px;
+    /* Kích thước nút dấu to rõ */
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    /* Căn giữa nội dung bên trong nút */
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    /* Xóa viền xanh khi click tập trung (focus) */
+    transition: var(--transition);
+    /* Hiệu ứng mượt */
+}
+
+/* Hiệu ứng khi di chuột vào nút cộng/trừ số lượng */
+.quantity-btn:hover {
+    transform: scale(1.2);
+    /* Phóng to nút lên 1.2 */
+}
+
+/* Số hiển thị số lượng ở giữa */
+.quantity-number {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Nút bấm lớn "Mua ngay / Thêm vào giỏ" chiếm hết chiều ngang */
+.full-width-btn {
+    display: flex !important;
+    /* Ép buộc hiển thị dạng Flex để căn icon */
+    width: 100%;
+    /* Chiếm 100% chiều rộng */
+    padding: 16px 0 !important;
+    /* Khoảng đệm trên dưới dày dặn */
+    font-size: 16px !important;
+    /* Chữ nút to rõ */
+    margin-bottom: 24px !important;
+    /* Khoảng cách với phần bên dưới */
+    border-radius: var(--radius-pill) !important;
+    /* Bo tròn viên thuốc */
+    box-shadow: 0 6px 20px rgba(224, 64, 160, 0.3) !important;
+    /* Tạo bóng đổ hồng */
+    /*Thuộc tính !important được dùng để đè lên các style mặc định khác của nút chung */
+}
+
+/* ==========================================
+   6. CÁC NHÃN CAM KẾT DỊCH VỤ (FEATURES)
+   ========================================== */
+
+/* Hàng chứa các nhãn cam kết dịch vụ ở dưới cùng */
+.features-badge-row {
+    display: flex;
+    /* Xếp các nhãn nằm ngang */
+    gap: 16px;
+    /* Khoảng cách giữa 2 nhãn */
+}
+
+/* Định dạng cấu trúc chung cho một nhãn cam kết */
+.feature-badge {
+    flex: 1;
+    /* Chia đều không gian cho các nhãn */
+    display: flex;
+    /* Xếp icon và chữ nằm ngang bên trong nhãn */
+    align-items: center;
+    /* Căn giữa dọc */
+    gap: 12px;
+    /* Khoảng cách giữa icon và chữ */
+    padding: 14px 20px;
+    /* Khoảng đệm bên trong nhãn */
+    border-radius: var(--radius-pill);
+    /* Bo tròn viên thuốc */
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Nhãn Giao hàng (.delivery) */
+.feature-badge.delivery {
+    background-color: #e6f4fe;
+    /* Nền xanh dương nhạt */
+    color: #0284c7;
+    /* Chữ màu xanh dương đậm */
+}
+
+/* Icon của nhãn giao hàng */
+.feature-badge.delivery .badge-icon {
+    color: #0284c7;
+    font-size: 16px;
+}
+
+/* Nhãn độ tươi ngon, chất lượng (.freshness) */
+.feature-badge.freshness {
+    background-color: #f7effe;
+    /* Nền màu tím nhẹ */
+    color: var(--secondary);
+    /* Chữ dùng màu phụ hệ thống */
+}
+
+/* Icon của nhãn chất lượng */
+.feature-badge.freshness .badge-icon {
+    color: var(--secondary);
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    .small-container {
+        /* Trả lại padding rộng rãi trên màn hình lớn */
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .col {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .col-2 {
+        flex-basis: 47%;
+        min-width: 340px;
+    }
+
+    .product-info-details {
+        margin-top: 0;
+    }
+}

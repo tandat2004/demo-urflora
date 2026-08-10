@@ -1,0 +1,76 @@
+<!-- Phụ trách: Nguyễn Đặng Hoàng Yến - B2306050 -->
+ 
+<!DOCTYPE html>  
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URFLORA | Đăng nhập</title> 
+    <link rel="stylesheet" href="css/main.css"> 
+    <link rel="stylesheet" href="css/auth.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body> 
+    <!-- =============== HEADER =============== -->
+    <header class="navbar"> 
+        <div class="logo-art"> 
+            URFL<span>🌸</span>RA 
+        </div>
+        <nav> 
+            <a href="index.html">Trang chủ</a> 
+            <a href="shop.html">Sản phẩm</a>
+            <a href="#">Về chúng tôi</a> 
+        </nav> 
+    </header>
+    <!-- =============== MAIN =============== -->
+    <main class="container"> 
+        <div class="logo"> 
+            <h1>URFLORA</h1>
+            <p>YOUR DAILY DOSE OF DELIGHT</p>
+        </div>
+
+        <div class="form-box"> 
+            <div class="tabs"> 
+                <button class="active" id="btn-tab-login">Sign In</button> 
+                <button id="btn-tab-register">Sign Up</button>
+            </div>
+            <!-- =============== FORM ĐĂNG NHẬP =============== -->
+            <div id="login-form"> 
+                <label>Email Address</label> 
+                <input type="email" id="login-email" placeholder="hello@example.com">
+                <label>Password</label> 
+                <input type="password" id="login-password" placeholder="********">
+                <a href="#" class="forgot">Quên mật khẩu ?</a>
+                <button class="submit-btn" id="btn-login">Welcome Back</button>
+            </div>
+            <!-- =============== FORM ĐĂNG KÝ =============== -->
+            <div id="register-form" class="hidden">
+                <label>Full Name</label>
+                <input type="text" id="reg-name" placeholder="Nguyen Van A">
+                <label>Email Address</label>
+                <input type="email" id="reg-email" placeholder="hello@example.com">
+                <label>Password</label> 
+                <input type="password" id="reg-password" placeholder="********">
+                <label>Confirm Password</label>
+                <input type="password" id="reg-confirm-password" placeholder="********">
+                     <!-- id="reg-confirm-password": JavaScript dùng để kiểm tra hai mật khẩu có giống nhau không. -->
+                <button class="submit-btn" id="btn-register">Create Account</button>
+            </div>
+        </div>
+    </main>
+    <!-- =============== FOOTER =============== -->
+    <footer class="footer"> 
+        <p>&copy; 2026 URFLORA. All rights reserved.</p>
+    </footer>
+    <!-- =============== JAVASCRIPT =============== -->
+    <script src="js/common.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
